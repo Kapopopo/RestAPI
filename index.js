@@ -80,7 +80,7 @@ app.delete('/delete/:id', (req, res) => {
   dataBase.query(sql, value, (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json();
+      return res.status(500).json({ error: 'ERREUR DU SERVEUR NULL' });
     } else {
       return res.status(200).json(result);
     }
@@ -97,7 +97,7 @@ app.put('/update/:id', (req, res) => {
   dataBase.query(sql, values, (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: 'Erreur de mise à jour' });
+      return res.status(500).json({ error: 'ERREUR DU SERVEUR NULL' });
     } else {
       return res.status(200).json(result);
     }
